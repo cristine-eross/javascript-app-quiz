@@ -1,0 +1,37 @@
+1. The HTML part
+    -creating the base with proper links:
+    -creating the layout structure:
+        -container
+        -h2 for questions
+        -for abcd answers ul>li>radio input with label
+        -button to submit
+    -adding classes for the styling and ids for the script, we need to grab the following:
+        -the container, so we can change the innerHTML when the test is over
+        -the h2 to dynamically add the questions
+        -the input alias the radio buttons as 'answer's when we want to see whether these are checked
+        -the individual labels as 'a_text', 'b_text' etc. so we can match with the correct answer data
+        -the button to add the function onClick
+
+2. The CSS part
+    -styled as cards with box shadow and rounded corners would look good, maybe with background img and fitting colors:
+
+3. The JS part
+    -creating the the data, the questions and answers in json format, saving as a constant that we can refer to:
+        -it should be an array of objects, each having a 'question', 'a', 'b', 'c', 'd' and 'correct' attributes with values
+    -creating the constants by grabbing the above mentioned html elements (container, h2, labels, button):
+    -setting up to let variables as initial values: score and currentQuiz as 0
+    -writing the functions:
+        -for loading the quiz:
+            -we need first the deselect function invoked
+            -grabbing and saving the data array with its objects as constant of the function so we can refer to the actual question
+            -with these values change the innerText of the elements: question field and labels
+        -for selecting the answers:
+            -grabbing the radio buttons and saving them as a common constant(.answer would do)
+            -setting the answer as a variable with the initial value of undefined
+            -write a forEach function to check whether any of the buttons are checked
+        -for deselecting the answers
+    -writing the onClick function of the button:
+        -it should grab the checked radio inputs as answers
+        -then compare it with the correct answer set in the data with an if statement:
+            -if they match: add points to the score & add the next object of the data array (basically the next question)
+            -inside of the next question statement we also need another if: we reach the end of the array, change the container, so we can see the results
